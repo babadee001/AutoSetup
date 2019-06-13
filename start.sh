@@ -29,6 +29,7 @@ nginxSetup(){
         sudo rm -rf /etc/nginx/sites-available/HelloBooks
         sudo rm -rf /etc/nginx/sites-enabled/HelloBooks
     fi
+    
 
     sudo bash -c 'cat > /etc/nginx/sites-available/HelloBooks <<EOF
     server {
@@ -39,6 +40,7 @@ nginxSetup(){
             }
     }'
     sudo ln -s /etc/nginx/sites-available/HelloBooks /etc/nginx/sites-enabled/HelloBooks
+    sudo rm -rf /etc/nginx/sites-available/default
     sudo service nginx restart
 }
 
